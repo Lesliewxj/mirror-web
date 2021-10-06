@@ -103,15 +103,7 @@
 						<div id="wizard">
 						</div>
 					{% endunless %}
-						<div id="news" {%if site.issue%}class="col-md-3"{%endif%}>
-							<h4>{% fa_svg fas.fa-bullhorn %} 新闻公告 </h4>
-							<ul>
-								{% for news in site.categories.news limit: 3%}
-								<li><a href="/news/#{{news.slug}}"><strong>{{news.date | date: "%Y-%m-%d"}}</strong> {{news.title}}</a></li>
-								{% endfor %}
-							</ul>
-							<div class="text-right"><a href="/news/"> more {% fa_svg fas.fa-angle-double-right %} </a></div>
-						</div>
+						
 						<div class="thuhidden {%if site.issue%}col-md-4{%endif%}">
 							<h4> {% fa_svg fas.fa-link %} 域名选择 </h4>
 							<ul>

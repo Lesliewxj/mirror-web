@@ -38,7 +38,7 @@
         {% endfor %}
         </div>
         {% assign first_sponsor = site.sponsors[site.sponsor.first] %}
-        <p class="thuhidden">本存储服务器由<a href="{{ first_sponsor.link }}">{{ first_sponsor.name }}</a>（{{ first_sponsor.eng }}）赞助{% if site.poweredby %}，并由{{ site.poweredbys[site.poweredby] }}强力驱动{% endif %}。TUNA 感谢<!--
+        <p class="thuhidden">本存储服务器由<a href="{{ first_sponsor.link }}">{{ first_sponsor.name }}</a>（{{ first_sponsor.eng }}）赞助{% if site.poweredby %}，并由{{ site.poweredbys[site.poweredby] }}强力驱动{% endif %}。感谢<!--
         {% for sponsor in site.sponsor %}
         -->{{ site.sponsors[sponsor].short }}<!--
           {% if forloop.rindex0 == 1 %}

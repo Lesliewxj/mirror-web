@@ -107,32 +107,15 @@
 						<div class="thuhidden {%if site.issue%}col-md-4{%endif%}">
 							<h4> {% fa_svg fas.fa-link %} 域名选择 </h4>
 							<ul>
-								<li><a href="{{ site.url }}">{{ site.url }}</a> 自动选择 </li>
-								{% if site.urlv6 %}
-									<li><a href="{{ site.urlv6 }}">{{ site.urlv6 }}</a> 只解析 IPv6</li>
-								{% endif %}
 								{% if site.urlv4 %}
 									<li><a href="{{ site.urlv4 }}">{{ site.urlv4 }}</a> 只解析 IPv4</li>
 								{% endif %}
 							</ul>
 						</div>
 						{% unless page.legacy or site.hide_download or site.issue %}
-						<div id="download-link">
-							<h4>{% fa_svg far.fa-file-archive %} 下载链接 </h4>
-							<p>常用发行版 iso 和应用工具安装包直接下载</p>
-							<button type="button" class="btn btn-info" data-toggle="modal" data-target="#isoModal">
-								获取下载链接
-							</button>
-						</div>
+						
 						{% endunless %}
-						<div class="thuhidden {%if site.issue%}col-md-3{%endif%}">
-							<h4> {% fa_svg far.fa-envelope %} 联系我们 </h4>
-							<ul>
-								<li><strong>意见反馈</strong> <br /> <a href="https://github.com/tuna/issues">https://github.com/tuna/issues</a></li>
-								<li><strong>发送邮件</strong> <br /> <a class="eib1gieB"></a></li>
-								<li><strong>在线交流</strong> <br /> <a href="https://web.libera.chat/#tuna"> #tuna at Libera.Chat </a></li>
-							</ul>
-						</div>
+						
 						<div {%if site.issue%}class="col-md-2"{%endif%}>
 							<h4> {% fa_svg fas.fa-external-link-alt %} 相关链接 </h4>
 							<ul>
@@ -157,44 +140,7 @@
 		<!-- iso download wizard modal -->
 		<!-- Modal -->
 		{% raw %}
-		<div class="modal fade" id="isoModal" tabindex="-1" role="dialog" aria-labelledby="isoModalLabel" aria-hidden="true">
-		  <div class="modal-dialog modal-lg" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		        <h4 class="modal-title" id="isoModalLabel">获取安装镜像</h4>
-		      </div>
-		      <div class="modal-body">
-					<div class="row">
-						<div class="col-md-12">
-							<ul class="nav nav-tabs">
-								<li role="presentation" :class="[curCategory === 'os' ? 'active' : '']" @click="switchCategory('os')" v-show="showCategory('os')"><a href="#">操作系统</a></li>
-								<li role="presentation" :class="[curCategory === 'app' ? 'active' : '']" @click="switchCategory('app')" v-show="showCategory('app')"><a href="#">应用软件</a></li>
-								<li role="presentation" :class="[curCategory === 'font' ? 'active' : '']" @click="switchCategory('font')" v-show="showCategory('font')"><a href="#">字体</a></li>
-							</ul>
-						</div>
-						<div class="col-md-3">
-							<ul class="nav nav-pills nav-stacked">
-								<li v-for="distro in curDistroList" :class="[selected.distro == distro.distro ? 'active' : '']">
-									<a href="#" @click="switchDistro(distro)">{{ distro.distro }}</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-md-9">
-							<h3>{{selected.distro}}</h3>
-							<ul>
-								<template v-for="url in selected.urls">
-								<li><a :href="url.url">{{url.name}}</a></li>
-								</template>
-							</ul>
-						</div>
-					</div>
-		      </div>
-		    </div>
-		  </div>
-		</div><!-- /iso download wizard modal -->
+		
 		{% endraw %}
 		{% endunless %}
 	</body>
